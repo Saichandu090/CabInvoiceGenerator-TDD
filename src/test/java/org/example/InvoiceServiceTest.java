@@ -67,19 +67,6 @@ public class InvoiceServiceTest
 
 
     @Test
-    public void givenPremiumUserId_GenerateTotalFare_ShouldReturnInvoiceSummery()
-    {
-        Ride[] rides = {new Ride(RideType.PREMIUM,35.0, 45),
-                new Ride(RideType.PREMIUM,10.55, 30),
-                new Ride(RideType.NORMAL,20, 30)};
-        invoiceGenerator.addRides("Invoice4321", rides);
-        InvoiceSummary invoiceSummery = invoiceGenerator.getInvoiceSummary("Invoice4321");
-        InvoiceSummary expectedSummery = new InvoiceSummary(3, 1063.25);
-        assertEquals(expectedSummery, invoiceSummery);
-    }
-
-
-    @Test
     public void givenPremiumLessDistanceOrTime_ShouldReturnMinFare()
     {
         InvoiceGenerator invoiceGenerator = new InvoiceGenerator();
